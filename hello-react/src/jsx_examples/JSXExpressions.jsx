@@ -25,7 +25,7 @@ function JSXExpressions() {
             <p>{isLoggedIn ? '로그인한 상태 입니다.' : '로그인을 하세요'}</p>
 
             {/* 논리 연산자를 활용한 조건부 렌더링 */}
-            {isLoggedIn && <p>사랑해~</p>}    
+            {isLoggedIn && <p>사랑해~</p>}
         </>
     );
 }
