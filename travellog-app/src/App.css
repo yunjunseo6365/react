@@ -72,15 +72,18 @@ body {
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  width: 400px;
+  width: 600px;
   height: 100%;
   background-color: white;
   transition: transform 0.3s ease;
 }
 
-#card-text{
+#card-text-container{
   margin-left: 15px;
   padding: 5px
+}
+#card-text {
+  color:aquamarine;
 }
 
 #rating-stars{
