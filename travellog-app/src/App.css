@@ -78,6 +78,11 @@ body {
   transition: transform 0.3s ease;
 }
 
+#card-text{
+  margin: 5px;
+  padding: 5px
+}
+
 #rating-stars{
   color:gold;
 }

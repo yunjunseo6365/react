@@ -12,9 +12,11 @@ function Card({card}) {
     return (
         <div className="travel-card">
             <img src={card.img} alt={card.etitle} />
-            <h2>{card.title}</h2>
-            <p id="rating-stars">{ratingStar(card.rating)} ({card.rating}/5)</p>
-            <p>{card.text}</p>
+            <div id = "card-text">
+             <h2>{card.title}</h2>
+             <p id="rating-stars">{ratingStar(card.rating)} ({card.rating}/5)</p>
+             <p>{card.text}</p>
+            </div>
         </div>
     );
 }
