@@ -1,9 +1,11 @@
 import './App.css';
+import React, {useState} from 'react';
 // import JSXSyntaxRules from './jsx_examples/JSXSyntaxRules';
 // import JSXExpressions from './jsx_examples/JSXExpressions';
 // import BasicJSX from './jsx_examples/BasicJSX';
 import Card from './components/Card';
 import Welcome from './components/Welcome';
+import Button from './components/Button';
 
 // Button 컴포넌트 정의
 // function Button({text, onClick}){
@@ -15,6 +17,24 @@ import Welcome from './components/Welcome';
 // }
 
 function App() {
+  //const [state, setState] = useState(initialState);
+  
+  //const [count, setCount] = useState(0);    // 예시
+  // state : 현재 상태값
+  // setState : state의 상태를 업데이트 하는 함수
+  // initialState : 초기 상태값
+
+  // 상태 업데이트 방법
+  //setCount(5);                  // 직접 값 전달
+  //setCount(count => count+1);   // 이전 상태 기반으로 업데이트
+
+  //const [user, setUser] = useState({name: 'dooly', age:10000000});
+  
+  // name 만 dooly -> donur 로 부분 변경 업데이트
+  //setUser(preUser => ({...preUser, name:'donur'}));
+
+  
+
   return (
     <div>
       {/* <JSXExpressions /> */}
@@ -23,6 +43,7 @@ function App() {
       <hr /> */}
       {/* <Welcome name="희동이" age={3} isChild={true} /> */}
       {/* <Welcome /> */}
+
       <div>
         <Card title="공지사항">
           <p>카드 내부 콘텐츠 입니다</p>
