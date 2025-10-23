@@ -89,3 +89,35 @@ body {
 #rating-stars{
   color:gold;
 }
+
+.addform{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+  border-color: black;
+  gap: 20px;
+}
+
+.addform h2{
+  color: #0056b3;
+}
+.addform input {
+  width: 90%;
+}
+
+.addform textarea{
+  width: 90%;
+  height: 150px;
+}
+
+.submit-trv-btn{
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  color: aliceblue;
+  border: #0056b3;
+  background-color: #0056b3;
+  cursor: pointer;
+}

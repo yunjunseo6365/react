@@ -2,13 +2,10 @@ import './App.css';
 import React, {useState} from 'react';
 import Title from './components/Title';
 import Todoitem from './components/Todoitem';
-import AppTodoForm from './components/AddTodoForm';
+import AddTodoForm from './components/AddTodoForm';
 
 function App() {
 
-  // 리액트 공부하기(미완료)
-  // useState 이해하기(완료)
-  // ToDoList 만들기(미완료)
   const [todos, setTodos] = useState([
     {id:1, text:'리액트 공부하기', completed: false},
     {id:2, text:'useState 이해하기', completed: true},
@@ -24,6 +21,7 @@ function App() {
 //     setTodos(updateTodos);
 // };
 
+  //자동으로 배열 꺼내서 렌더링
   const handleToggle = (id) => {    // id -> key에 해당하는 값. 유일한 값으로 
     setTodos(
       todos.map((todo) => 
@@ -32,20 +30,36 @@ function App() {
     );
   };
 
+  // 새 할 일 추가 함수
+  const addTodo = (text) =>{
+    // 배열 내 리스트 추가 틀 작성
+    const newTodo = {
+      id: Date.now(),
+      text: text,
+      completed: false
+    }
+    // setTodos로 배열 새로 만들기
+    setTodos([...todos, newTodo]);
+  }
+
+  // 할 일 리스트 삭제 함수
+  const deleteTodo = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id));
+  }
 
 
   return (
     <div className='app'>
+
       <Title title="To Do List"></Title>
       
-      <AppTodoForm />
+      <AddTodoForm onAdd={addTodo} />
+
       <ul className='todo-list'>
         {todos.map(todo => (
-          <Todoitem todo={todo} onToggle={handleToggle} />
+          <Todoitem key={todo.id} todo={todo} onToggle={handleToggle} onDelete={deleteTodo} />
         ))}
       </ul>
-
-      {/* <Button /> */}
     </div>
   );
 }

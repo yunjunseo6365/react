@@ -29,15 +29,39 @@ h2{
 
 .todo-list li {
   display: flex;
+  justify-content: space-between;
   width: 500px;
+  height: 40px;
   padding: 10px;
   margin-bottom: 5px;
   background-color: #f8f8f8;
   border-radius: 4px;
 }
 
+.todo-btn{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.todo-btn .edit-btn{
+  border-radius: 5px;
+  border-style: none;
+  background-color: #4CAF50;
+  cursor: pointer;
+}
+
+.todo-btn .remove-btn{
+  border-radius: 5px;
+  border-style: none;
+  background-color: red;
+  cursor: pointer;
+}
+
 .todo-item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
   margin-bottom: 10px;
@@ -45,10 +69,11 @@ h2{
   border-radius: 4px;
   color: black;
   text-decoration: none;
+  gap: 20px;
 }
 
-.todo-item li{
-  width: 600px;
+.todo-item .todo-li{
+  width: 600px;  
 }
 
 .todo-item.completed {
@@ -82,4 +107,8 @@ h2{
   color: white;
   border: none;
   cursor: pointer;
+}
+
+.todo-btn{
+  display: flex;
 }
