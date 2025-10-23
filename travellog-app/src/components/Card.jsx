@@ -10,14 +10,13 @@ function Card({card}) {
     };
 
     return (
-        <div className="travel-card">
-            <img src={card.img} alt={card.etitle} />
-            <div id = "card-text-container">
-             <h2 id="card-text">{card.title}</h2>
-             <p id="rating-stars">{ratingStar(card.rating)} ({card.rating}/5)</p>
-             <p>{card.text}</p>
+            <div className="card">
+              <img src={card.img} alt={card.etitle} />
+              <h2 id="card-title">{card.title}</h2>
+              <p id="rating-stars">{ratingStar(card.rating)} ({card.rating}/5)</p>
+              <p id="card-text">{card.text}</p>
             </div>
-        </div>
+
     );
 }
 

@@ -1,31 +1,47 @@
 import React, {useState} from "react";
 
-function Addcard() {
+function Addcard({onCard}) {
 
-    const [range, setRange] = useState(3);
+    // 여행지 이름
+    const [title, setTitle] = useState('');
+    // 이미지 URL
+    const [img, setImg] = useState("https://placehold.co/300x200?text=none");
+    // 설명
+    const [text, setText] = useState('');
+    // 평점
+    const [rating, setRating] = useState(3);
 
-    const rangeVal = (e) =>{
-        setRange(e.target.value);
+    // <form>태그 내에서 submit으로 이벤트 발생했을때
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onCard(title, img, rating, text)
+        setTitle('');
+        setText('');
+        setImg('');
     }
 
     return (
-        <form className="addform">
+        <form className="addform" onSubmit={handleSubmit}>
             <h2>새로운 여행지 추가</h2>
             <div>
                 <h3>여행지 이름</h3>
-                <input type="text" placeholder="예 : 파리" />
+                <input type="text" className="title" placeholder="예 : 파리" 
+                onChange={(e) => setTitle(e.target.value)} />
             </div>
             <div>
                 <h3>이미지 URL (선택사항)</h3>
-                <input type="text" placeholder="https://example.com/image.jpg" />
+                <input type="text" className="imgurl" placeholder="https://example.com/image.jpg" 
+                 onChange={(e) => setImg(e.target.value)} />
             </div>
             <div>
                 <h3>설명</h3>
-                <textarea placeholder="이 여행지에 대한 설명을 작성하세요" />
+                <textarea className="txtarea" placeholder="이 여행지에 대한 설명을 작성하세요"
+                onChange={(e) => setText(e.target.value)} value={text}/>
             </div>
             <div>
-                <h3>평점 (1 - 5)</h3>
-                <input type="range" min="0" max="5" onChange={rangeVal} /><span>{range}</span>
+                <h3>평점 (1 - 5)  /  현재평점 : {rating}</h3>
+                <input type="range" min="0" max="5" className="rating-range" 
+                onChange={(e) => setRating(e.target.value)} />
             </div>
             <div>
                 <button type="submit" className="submit-trv-btn">여행지 추가</button>
