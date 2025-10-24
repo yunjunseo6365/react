@@ -15,16 +15,17 @@ function Addcard({onCard}) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // 필수 요소
+        // 필수 요소 설정 및 메시지 출력
         if (title.trim() === '' || text.trim() === '') {
             alert('여행지 이름과 설명을 입력해주세요.');
             return;
         }
-
+        // 렌더링
         onCard(title, img, rating, text)
+        // 초기화
         setTitle('');
         setText('');
-        setRating(0);
+        setRating(3);
         setImg('https://placehold.co/300x200?text=none');
     }
 
@@ -48,7 +49,7 @@ function Addcard({onCard}) {
             </div>
             <div>
                 <h3>평점 (1 - 5)  /  현재평점 : {rating}</h3>
-                <input type="range" min="0" max="5" className="rating-range" 
+                <input type="range" min="0" max="5" className="rating-range"
                 onChange={(e) => setRating(e.target.value)} value={rating} />
             </div>
             <div>

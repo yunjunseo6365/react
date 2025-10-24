@@ -1,5 +1,4 @@
 .App {
-  display: flex;
   margin: 0 auto;
   flex-direction: column;
   font-family: Arial, sans-serif;
@@ -14,7 +13,7 @@
   margin-left: 20px;
 }
 
-h2{
+h1{
   text-align: center;
   color: #333;
 }
@@ -111,4 +110,98 @@ h2{
 
 .todo-btn{
   display: flex;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  background-color: #f1f1f1;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 0 5px;
+  padding: 8px 12px;
+}
+
+.filters button.active {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.empty-message {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
+.priority-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 8px;
+  margin-top: 4px;
+  border-radius: 5px;
+  border-style: none;
+}
+
+/* 우선순위별 색상 */
+.priority-high {
+  padding: 2px 8px;
+  border-radius: 12px;
+  background-color: #ff5252;
+  color: white;
+}
+
+.priority-middle {
+  padding: 2px 8px;
+  border-radius: 12px;
+  background-color: #ffb74d;
+  color: white;
+}
+
+.priority-low {
+  padding: 2px 8px;
+  border-radius: 12px;
+  background-color: #81c784;
+  color: white;
+}
+
+.category-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #555;
+  width: 150px;
+}
+
+.category-btn svg {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.category-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.category-btn.selected {
+  background-color: #4caf50;
+  color: white;
 }

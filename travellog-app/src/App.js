@@ -7,7 +7,6 @@ import Footer from './components/Footer';
 import Addcard from './components/Addcard';
 
 
-
 function App() {
 
   const [cards, cardState] = useState([
