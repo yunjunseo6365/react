@@ -51,7 +51,6 @@ function Button() {
     //      </div>
     // )
 
-        
     const [fruits, setFruits] = useState([
         {id:1, name:'apple'},
         {id:2, name:'banana'},
