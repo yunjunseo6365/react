@@ -7,9 +7,16 @@ import React, {useState} from 'react';
 // import Welcome from './components/Welcome';
 // import ControlledForm from './components/ControlledForm';
 // import UnControlledForm from './components/UnControlledForm';
-import ConditionalComponent from './components/ConditionalComponent';
-import Mailbox from './components/Mailbox';
-import BackgroundExample from './components/BackgroundExample';
+// import ConditionalComponent from './components/ConditionalComponent';
+// import Mailbox from './components/Mailbox';
+// import BackgroundExample from './components/BackgroundExample';
+import {Routes, Route, Link} from 'react-router-dom';
+import Home from './pages/Home';
+import Product from './pages/Product';
+import ProductDetail from './pages/ProductDetail';
+// import About from './pages/About';
+// import Contact from './pages/Contact';
+// import UserProfile from './pages/UserProfile';
 
 // Button 컴포넌트 정의
 // function Button({text, onClick}){
@@ -65,15 +72,35 @@ function App() {
   //     </div> */}
   //   </div>
   // );
-  const isLoggedIn = true;
-  const unreadMessage = "안녕하세요 반갑습니다";
+  // const isLoggedIn = true;
+  // const unreadMessage = "안녕하세요 반갑습니다";
 
   return(
     <div>
-      <ConditionalComponent isLoggedIn={isLoggedIn}/>
-      <Mailbox unreadMessage={unreadMessage} />
+      {/* <ConditionalComponent isLoggedIn={isLoggedIn}/> */}
+      {/* <Mailbox unreadMessage={unreadMessage} /> */}
       {/* <img src={process.env.REACT_APP_PUBLIC_URL+'/may2.jpg'} alt="메이" /> */}
-      <BackgroundExample />
+      {/* <BackgroundExample /> */}
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">홈</Link>
+            </li>
+            <li>
+              <Link to="/product">제품</Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Product />}>
+            <Route path=":productId" element={<ProductDetail />} />
+          </Route> 
+        </Routes>
+      </main>
     </div>
   );
 }
