@@ -8,7 +8,7 @@ function Header() {
          <h1>ToDoList</h1>
          <ul className='nav-list'>
           <li>
-            <Link to="/home">홈</Link>
+            <Link to="/">홈</Link>
           </li>
           <li>
             <Link to="/todo">할 일 목록</Link>
