@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 // import JSXSyntaxRules from './jsx_examples/JSXSyntaxRules';
 // import JSXExpressions from './jsx_examples/JSXExpressions';
 // import BasicJSX from './jsx_examples/BasicJSX';
@@ -14,9 +14,12 @@ import {Routes, Route, Link} from 'react-router-dom';
 import Home from './pages/Home';
 import Product from './pages/Product';
 import ProductDetail from './pages/ProductDetail';
+import DependencyExample from './components/DependencyExample';
+import CleanupExample from './components/CleanupExample';
 // import About from './pages/About';
 // import Contact from './pages/Contact';
-// import UserProfile from './pages/UserProfile';
+
+
 
 // Button 컴포넌트 정의
 // function Button({text, onClick}){
@@ -75,13 +78,21 @@ function App() {
   // const isLoggedIn = true;
   // const unreadMessage = "안녕하세요 반갑습니다";
 
+  const [show, setShow] = useState(true);
+
+  // useEffect(() => {
+  //   //실행할 부수 효과
+  //   document.title=`카운트: ${count}`
+  // })
+
+
   return(
-    <div>
-      {/* <ConditionalComponent isLoggedIn={isLoggedIn}/> */}
-      {/* <Mailbox unreadMessage={unreadMessage} /> */}
-      {/* <img src={process.env.REACT_APP_PUBLIC_URL+'/may2.jpg'} alt="메이" /> */}
-      {/* <BackgroundExample /> */}
-      <header>
+      {/* <ConditionalComponent isLoggedIn={isLoggedIn}/> */},
+      {/* <Mailbox unreadMessage={unreadMessage} /> */},
+      {/* <img src={process.env.REACT_APP_PUBLIC_URL+'/may2.jpg'} alt="메이" /> */},
+      {/* <BackgroundExample /> */},
+
+      {/* <header>
         <nav>
           <ul>
             <li>
@@ -100,9 +111,14 @@ function App() {
             <Route path=":productId" element={<ProductDetail />} />
           </Route> 
         </Routes>
-      </main>
+      </main> */},
+    <div>
+      <DependencyExample />
+      {/* <button onClick={() => setShow(!show)}>토글</button>
+      {show && <CleanupExample />} */}
     </div>
-  );
+      
+  )
 }
 
 export default App;
