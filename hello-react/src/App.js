@@ -16,6 +16,10 @@ import Product from './pages/Product';
 import ProductDetail from './pages/ProductDetail';
 import DependencyExample from './components/DependencyExample';
 import CleanupExample from './components/CleanupExample';
+import FetchGetExample from './api/FetchGetExample';
+import FetchPostExample from './api/FetchPostExample';
+import FetchPutExample from './api/FetchPutExample';
+import FetchDeleteExample from './api/FetchDeleteExample';
 // import About from './pages/About';
 // import Contact from './pages/Contact';
 
@@ -113,9 +117,13 @@ function App() {
         </Routes>
       </main> */},
     <div>
-      <DependencyExample />
+      {/* <DependencyExample /> */}
       {/* <button onClick={() => setShow(!show)}>토글</button>
       {show && <CleanupExample />} */}
+      <FetchGetExample />
+      {/* <FetchPostExample /> */}
+      <FetchPutExample />
+      <FetchDeleteExample />
     </div>
       
   )
