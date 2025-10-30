@@ -11,19 +11,21 @@ import React, {useEffect, useState} from 'react';
 // import Mailbox from './components/Mailbox';
 // import BackgroundExample from './components/BackgroundExample';
 import {Routes, Route, Link} from 'react-router-dom';
-import Home from './pages/Home';
-import Product from './pages/Product';
-import ProductDetail from './pages/ProductDetail';
-import DependencyExample from './components/DependencyExample';
-import CleanupExample from './components/CleanupExample';
-import FetchGetExample from './api/FetchGetExample';
-import FetchPostExample from './api/FetchPostExample';
-import FetchPutExample from './api/FetchPutExample';
-import FetchDeleteExample from './api/FetchDeleteExample';
+// import Home from './pages/Home';
+// import Product from './pages/Product';
+// import ProductDetail from './pages/ProductDetail';
+// import DependencyExample from './components/DependencyExample';
+// import CleanupExample from './components/CleanupExample';
+// import FetchGetExample from './api/FetchGetExample';
+// import FetchPostExample from './api/FetchPostExample';
+// import FetchPutExample from './api/FetchPutExample';
+// import FetchDeleteExample from './api/FetchDeleteExample';
 // import About from './pages/About';
 // import Contact from './pages/Contact';
-
-
+// import AxiosGetExample from './api/AxiosGetExample';
+//import AxiosPostExample from './api/AxiosPostExample';
+import AxiosPutExample from './api/AxiosPutExample';
+import AxiosDeleteExample from './api/AxiosDeleteExample';
 
 // Button 컴포넌트 정의
 // function Button({text, onClick}){
@@ -120,10 +122,14 @@ function App() {
       {/* <DependencyExample /> */}
       {/* <button onClick={() => setShow(!show)}>토글</button>
       {show && <CleanupExample />} */}
-      <FetchGetExample />
+      {/* <FetchGetExample /> */}
       {/* <FetchPostExample /> */}
-      <FetchPutExample />
-      <FetchDeleteExample />
+      {/* <FetchPutExample /> */}
+      {/* <FetchDeleteExample /> */}
+      {/* <AxiosGetExample /> */}
+      {/* <AxiosPostExample /> */}
+      <AxiosPutExample />
+      <AxiosDeleteExample />
     </div>
       
   )
